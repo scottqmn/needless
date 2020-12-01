@@ -1,15 +1,11 @@
 /* eslint-disable no-console */
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import styles from '../styles/components/Counter.module.scss'
 
 const Counter = ({ initialCount = 0 }) => {
   const [count, setCount] = useState(initialCount)
-
-  useEffect(() => {
-    console.log(`Setting count: ${count}`)
-  }, [count])
 
   return (
     <div
