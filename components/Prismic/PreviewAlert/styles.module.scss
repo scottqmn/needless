@@ -1,0 +1,10 @@
+.wrap {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: block;
+    padding: 5px 10px;
+    border: 2px solid currentColor;
+    border-radius: 4px;
+    z-index: 10;
+}
