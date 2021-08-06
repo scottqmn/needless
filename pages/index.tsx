@@ -1,24 +1,25 @@
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import { Client } from '../utils/prismic'
-import Layout from '../components/Layout'
-import Intro from '../components/Intro'
-import Counter from '../components/Counter'
+import Page from '../templates/Page'
 
-const Index: React.FC = ({ homepage }) => {
-  console.log(homepage)
-  return (
-    <Layout>
-      <Intro showIcon />
-      <Counter initialCount={26} />
-    </Layout>
-  )
+export const INDEX_UID = process.env.PRISMIC_INDEX_UID
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    const { preview = null, previewData = {} } = context
+
+    const queryOptions: Record<string, string | number | string[]> = {
+        fetchLinks: [],
+    }
+
+    if (previewData.ref) {
+        queryOptions.ref = previewData.ref
+    }
+
+    const page = await Client().getByUID('page', INDEX_UID, queryOptions)
+
+    return {
+        props: { page, preview },
+    }
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { req } = context
-  const homepage = await Client(req).getSingle('homepage', {})
-
-  return { props: { homepage } }
-}
-
-export default Index
+export default Page
