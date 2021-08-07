@@ -1,0 +1,43 @@
+.logo {
+    cursor: initial;
+    font-family: var(--monospace);
+    font-size: 48px;
+    letter-spacing: 0.01em;
+    user-select: none;
+    width: min-content;
+}
+
+.row {
+    display: flex;
+
+    span {
+        color: transparent;
+        position: relative;
+        text-transform: lowercase;
+
+        &::before,
+        &::after {
+            color: var(--text);
+            content: attr(data-letter);
+            left: 0;
+            position: absolute;
+            top: 0;
+            transition: opacity 150ms ease-in-out;
+        }
+
+        &::after {
+            opacity: 0;
+            text-transform: uppercase;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 0;
+            }
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
