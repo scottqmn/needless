@@ -1,0 +1,29 @@
+@use 'breakpoints' as bp;
+
+@import './reset.scss';
+@import './containers.scss';
+@import './typography.scss';
+
+:root {
+    --text: #000;
+    --background: #fff;
+    --primary: #fd8d0d;
+    --secondary: #eaf4d3;
+    --heading: 'Dancing Script', cursive;
+    --body: 'Lato', sans-serif;
+    --gap: 20px;
+    --monospace: 'Major Mono Display', monospace;
+    --sans-serif: 'Work Sans', sans-serif;
+}
+
+html {
+    background-color: var(--background);
+    font-size: 100%;
+}
+
+body {
+    background: var(--background);
+    color: var(--sans-serif);
+    font-size: 1rem;
+    font-family: var(--body);
+}
