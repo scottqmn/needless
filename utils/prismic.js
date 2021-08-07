@@ -21,19 +21,17 @@ export const Client = (req = null) =>
 
 export const { Predicates } = Prismic
 
-export const fetchLinks = {}
+export const fetchLinks = { post: [] }
 
 export const linkResolver = (doc) => {
     switch (doc.type) {
         case 'page':
-            return doc.uid === indexUID ? '/' : `/${doc.uid}`
-        case 'menu_page':
-            return '/menu'
-        case 'menu_item':
-            return `/menu/${doc.uid}`
+            return `/page/${doc.uid}`
+        case 'post':
+            return `/post/${doc.uid}`
         default:
             // eslint-disable-next-line no-console
-            console.warn('no linkResolver case:', doc)
+            console.warn('No linkResolver case:', doc)
     }
 
     // Backup for all other types
@@ -87,4 +85,76 @@ export const getPageUIDPaths = async () => {
         paths: uidPaths,
         fallback: false,
     }
+}
+
+export const getHomepageProps = async (context) => {
+    const { req, preview = null, previewData = {} } = context
+
+    const queryOptions = {
+        fetchLinks: [...fetchLinks.post],
+    }
+
+    if (previewData.ref) {
+        queryOptions.ref = previewData.ref
+    }
+
+    const document = await Client(req).getSingle('homepage', queryOptions)
+
+    const posts = await Client().query([Predicates.at('document.type', 'post')])
+
+    return {
+        props: { document, posts, preview },
+    }
+}
+
+export const getDocumentProps = (docType) => async (context) => {
+    const { req, params = {}, preview = null, previewData = {} } = context
+    const { uid } = params
+
+    const queryOptions = {
+        fetchLinks: [...fetchLinks.post],
+    }
+
+    if (previewData.ref) {
+        queryOptions.ref = previewData.ref
+    }
+
+    const document = await Client(req).getByUID(
+        docType,
+        uid || indexUID,
+        queryOptions
+    )
+
+    return {
+        props: { document, preview },
+    }
+}
+
+export const getDocumentPaths = (docType) => async () => {
+    const documents = await Client().query([
+        Predicates.at('document.type', docType),
+    ])
+
+    const paths =
+        documents.results.map(({ uid }) => ({ params: { uid } })) || []
+
+    return {
+        paths,
+        fallback: false,
+    }
+}
+
+export const getPosts = async (context) => {
+    const { req } = context
+
+    const options = {
+        fetchLinks: [...fetchLinks.post],
+    }
+
+    const posts = await Client(req).query(
+        [Predicates.at('document.type', 'post')],
+        options
+    )
+
+    return { props: { posts } }
 }

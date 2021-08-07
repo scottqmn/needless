@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { RichText, Elements } from 'prismic-reactjs'
 import NextImage from '../NextImage'
@@ -62,18 +63,27 @@ const htmlSerializer = (type, element, content, children, key) => {
     }
 }
 
-const PrismicRichText = ({ content }) => {
-    return content ? (
+const PrismicRichText = ({ content, asText }) => {
+    if (!content) {
+        return null
+    }
+
+    if (asText) {
+        return <>{RichText.asText(content)}</>
+    }
+
+    return (
         <RichText
             render={content}
             linkResolver={linkResolver}
             htmlSerializer={htmlSerializer}
         />
-    ) : null
+    )
 }
 
 PrismicRichText.propTypes = {
     content: prismicRichTextPropType,
+    asText: PropTypes.bool,
 }
 
 export default PrismicRichText

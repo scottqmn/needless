@@ -2,9 +2,9 @@
 import PropTypes from 'prop-types'
 import NextLink from 'next/link'
 import { linkResolver } from '../../../utils/prismic'
-import { prismicLinkPropType } from '../../../prop-types/prismic'
+import { DocumentLinkPropType } from '../../../prop-types/prismic'
 
-const PrismicLink = ({ children, link = {}, ...props }) => {
+const DocumentLink = ({ children, link = {}, ...props }) => {
     // Handle out/Prismic links
     const { link_type, target, url } = link
     switch (link_type) {
@@ -36,9 +36,9 @@ const PrismicLink = ({ children, link = {}, ...props }) => {
     return <span {...props}>{children}</span>
 }
 
-PrismicLink.propTypes = {
+DocumentLink.propTypes = {
     children: PropTypes.node,
-    link: prismicLinkPropType,
+    link: DocumentLinkPropType,
 }
 
-export default PrismicLink
+export default DocumentLink

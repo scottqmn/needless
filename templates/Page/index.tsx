@@ -2,14 +2,14 @@ import PageSlices from '../../components/PageSlices'
 import { Document } from '../../interfaces/prismic'
 
 type Props = {
-    page: Document
+    document: Document
     preview: boolean
 }
 
-const Page: React.FC<Props> = ({ page, preview }) => {
-    console.log(page, preview)
+const Page: React.FC<Props> = ({ document, preview }) => {
+    console.log(document, preview)
 
-    return <PageSlices body={page.data.body} />
+    return <PageSlices body={document.data.body} />
 }
 
 export default Page
