@@ -22,4 +22,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     }
 }
 
-export default Page
+const Component = Page
+
+export default Component

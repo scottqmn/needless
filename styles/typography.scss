@@ -1,5 +1,11 @@
 @use 'breakpoints' as bp;
 
+%logo {
+    font-family: var(--monospace);
+    font-size: 48px;
+    letter-spacing: 0.01em;
+}
+
 %h1 {
     font-size: 28px;
     font-family: var(--heading);
@@ -98,6 +104,10 @@
     @media (min-width: bp.$sm) {
         font-size: 14px;
     }
+}
+
+.t-logo {
+    @extend %logo;
 }
 
 .t-h1 {
