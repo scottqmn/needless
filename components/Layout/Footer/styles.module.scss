@@ -1,2 +1,7 @@
-// .outer {
-// }
+.outer {
+    background-color: var(--secondary);
+    padding: var(--gap) 0;
+}
+
+.inner {
+}

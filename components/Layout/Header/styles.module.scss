@@ -1,0 +1,18 @@
+.outer {
+    background-color: var(--background);
+    padding: var(--gap) 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.inner {
+    display: flex;
+    gap: var(--gap);
+    justify-content: space-between;
+    width: 100%;
+}
+
+.links {
+    text-align: right;
+}

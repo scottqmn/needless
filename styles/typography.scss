@@ -2,62 +2,68 @@
 
 %logo {
     font-family: var(--monospace);
-    font-size: 48px;
+    font-size: 24px;
     letter-spacing: 0.01em;
+
+    @media (min-width: bp.$md) {
+        font-size: 48px;
+    }
 }
 
 %h1 {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-family: var(--heading);
-    font-weight: 700;
     letter-spacing: 0.05em;
     line-height: 1.35em;
 
-    @media (min-width: bp.$sm) {
-        font-size: 32px;
-    }
-
     @media (min-width: bp.$md) {
-        font-size: 40px;
+        font-size: 3.5rem;
     }
 }
 
 %h2 {
-    font-size: 24px;
+    font-size: 1.125rem;
     font-family: var(--heading);
-    font-weight: 700;
 
     @media (min-width: bp.$md) {
-        font-size: 30px;
+        font-size: 1.5rem;
     }
 }
 
 %h3 {
-    font-size: 22px;
+    font-size: 1rem;
     font-family: var(--heading);
-    font-weight: 700;
 
     @media (min-width: bp.$md) {
-        font-size: 24px;
+        font-size: 1.125rem;
     }
 }
 
 %h4 {
-    font-size: 20px;
+    font-size: 1rem;
     font-family: var(--heading);
-    font-weight: 700;
+
+    @media (min-width: bp.$md) {
+        font-size: 1.125rem;
+    }
 }
 
 %h5 {
-    font-size: 16px;
+    font-size: 1rem;
     font-family: var(--heading);
-    font-weight: 700;
+
+    @media (min-width: bp.$md) {
+        font-size: 1.125rem;
+    }
 }
 
 %h6 {
-    font-size: 14px;
+    font-size: 1rem;
     font-family: var(--heading);
-    font-weight: 700;
+
+    @media (min-width: bp.$md) {
+        font-size: 1.125rem;
+    }
 }
 
 %title {
@@ -76,33 +82,33 @@
 }
 
 %subtitle {
-    font-size: 24px;
+    font-size: 1.125rem;
     font-family: var(--body);
+
+    @media (min-width: bp.$md) {
+        font-size: 1.5rem;
+    }
 }
 
 %body {
-    font-size: 12px;
+    font-size: 1rem;
     font-family: var(--body);
-    line-height: 2.2em;
-
-    @media (min-width: bp.$sm) {
-        font-size: 14px;
-    }
+    line-height: 1.65em;
 
     @media (min-width: bp.$md) {
-        font-size: 16px;
+        font-size: 1.125rem;
     }
 }
 
 %label {
-    font-size: 12px;
+    font-size: 0.875rem;
     font-family: var(--body);
     font-weight: 700;
     letter-spacing: 0.05em;
     line-height: 1.4em;
 
     @media (min-width: bp.$sm) {
-        font-size: 14px;
+        font-size: 1rem;
     }
 }
 
@@ -186,7 +192,8 @@
     }
     li {
         @extend %body;
-        margin: 0.83em 0;
+
+        margin-block: 0.5em 0;
     }
     & > *:first-child {
         margin-top: 0;

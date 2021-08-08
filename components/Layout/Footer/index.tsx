@@ -15,8 +15,10 @@ const Footer: React.FC<Props> = () => {
     }`
 
     return (
-        <footer className={clsx(styles.outer, 'container')}>
-            <div className='t-logo'>{years}</div>
+        <footer className={styles.outer}>
+            <div className={clsx(styles.inner, 'container')}>
+                <div className='t-logo'>{years}</div>
+            </div>
         </footer>
     )
 }

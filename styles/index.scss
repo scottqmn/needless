@@ -10,11 +10,11 @@
     --background: #fff;
     --primary: #fd8d0d;
     --secondary: #eaf4d3;
-    --heading: 'Dancing Script', cursive;
-    --body: 'Lato', sans-serif;
     --gap: 20px;
     --monospace: 'Major Mono Display', monospace;
     --sans-serif: 'Work Sans', sans-serif;
+    --heading: 'Major Mono Display', monospace;
+    --body: 'Work Sans', sans-serif;
 }
 
 html {
@@ -24,7 +24,7 @@ html {
 
 body {
     background: var(--background);
-    color: var(--sans-serif);
+    color: var(--text);
     font-size: 1rem;
     font-family: var(--body);
 }
