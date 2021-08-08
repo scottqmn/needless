@@ -84,6 +84,7 @@
 %subtitle {
     font-size: 1.125rem;
     font-family: var(--body);
+    letter-spacing: 0.015em;
 
     @media (min-width: bp.$md) {
         font-size: 1.5rem;
@@ -93,6 +94,7 @@
 %body {
     font-size: 1rem;
     font-family: var(--body);
+    letter-spacing: 0.015em;
     line-height: 1.65em;
 
     @media (min-width: bp.$md) {
@@ -151,7 +153,7 @@
 }
 
 // Rich text
-.rte {
+.t-rte {
     h1 {
         @extend %h1;
         margin: 0.67em 0;
@@ -203,6 +205,10 @@
         text-decoration: underline;
     }
     pre {
+        background-color: var(--secondary);
+        border-radius: 10px;
+        margin-block: 2em;
+        padding: var(--gap);
         white-space: normal;
     }
     i {
