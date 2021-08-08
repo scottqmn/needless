@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/no-danger */
 import { prismicEmbedPropType } from '../../../prop-types/prismic'
 

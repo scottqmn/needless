@@ -2,9 +2,9 @@
 import PropTypes from 'prop-types'
 import NextLink from 'next/link'
 import { linkResolver } from '../../../utils/prismic'
-import { DocumentLinkPropType } from '../../../prop-types/prismic'
+import { LinkPropType } from '../../../prop-types/prismic'
 
-const DocumentLink = ({ children, link = {}, ...props }) => {
+const Link = ({ children, link = {}, ...props }) => {
     // Handle out/Prismic links
     const { link_type, target, url } = link
     switch (link_type) {
@@ -29,16 +29,14 @@ const DocumentLink = ({ children, link = {}, ...props }) => {
         }
         case 'Any':
         default:
-        // eslint-disable-next-line no-console
-        // console.warn('No link provided')
     }
 
     return <span {...props}>{children}</span>
 }
 
-DocumentLink.propTypes = {
+Link.propTypes = {
     children: PropTypes.node,
-    link: DocumentLinkPropType,
+    link: LinkPropType,
 }
 
-export default DocumentLink
+export default Link

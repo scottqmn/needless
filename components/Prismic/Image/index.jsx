@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 /* eslint-disable react/jsx-props-no-spreading */
 import PropTypes from 'prop-types'
-import Image from 'next/image'
+import NextImage from 'next/image'
 import { prismicImagePropType } from '../../../prop-types/prismic'
 
-const NextImage = ({
+const Image = ({
     image,
     layout = 'intrinsic',
     objectFit = 'cover',
@@ -17,7 +17,7 @@ const NextImage = ({
     const dimensions = layout !== 'fill' && image.dimensions
 
     return image?.url ? (
-        <Image
+        <NextImage
             {...props}
             {...dimensions}
             src={image.url}
@@ -28,7 +28,7 @@ const NextImage = ({
     ) : null
 }
 
-NextImage.propTypes = {
+Image.propTypes = {
     image: prismicImagePropType,
     layout: PropTypes.oneOf(['fixed', 'intrinsic', 'responsive', 'fill']),
     objectFit: PropTypes.oneOf([
@@ -40,4 +40,4 @@ NextImage.propTypes = {
     ]),
 }
 
-export default NextImage
+export default Image

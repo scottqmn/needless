@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { RichText, Elements } from 'prismic-reactjs'
-import NextImage from '../NextImage'
+import Image from '../Image'
 import { linkResolver } from '../../../utils/prismic'
 import { prismicRichTextPropType } from '../../../prop-types/prismic'
 
@@ -49,7 +50,7 @@ const htmlSerializer = (type, element, content, children, key) => {
         // use next/image for images
         case Elements.image:
             return (
-                <NextImage
+                <Image
                     key={key}
                     className='block-img'
                     image={element}

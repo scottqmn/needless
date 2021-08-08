@@ -1,7 +1,6 @@
-import DocumentLink from './DocumentLink'
+import Link from './Link'
 import Embed from './Embed'
-import NextImage from './NextImage'
-import PreviewAlert from './PreviewAlert'
+import Image from './Image'
 import RichText from './RichText'
 
-export { Embed, NextImage, PreviewAlert, DocumentLink, RichText }
+export { Embed, Image, Link, RichText }
