@@ -95,9 +95,9 @@ export const linkResolver = (doc) => {
         case 'homepage':
             return '/'
         case 'page':
-            return `/page/${doc.uid}`
+            return `/${doc.uid}`
         case 'post':
-            return `/post/${doc.uid}`
+            return `/p/${doc.uid}`
         default:
             // eslint-disable-next-line no-console
             console.warn('No linkResolver case:', doc)

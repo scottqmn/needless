@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { RichText } from '../../Prismic'
 
-const RichText: React.FC = ({ primary }) => {
+const RichTextSlice: React.FC = ({ primary }) => {
     return (
         <div className={clsx('container', 'rte')}>
             <RichText content={primary.content} />
@@ -9,4 +9,4 @@ const RichText: React.FC = ({ primary }) => {
     )
 }
 
-export default RichText
+export default RichTextSlice

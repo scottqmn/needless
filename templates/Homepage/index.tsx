@@ -1,4 +1,5 @@
 import React from 'react'
+import PostList from '../../components/PostList'
 import { RichText } from '../../components/Prismic'
 import { Document } from '../../interfaces/prismic'
 
@@ -10,15 +11,10 @@ type Props = {
 
 const Page: React.FC<Props> = ({ document, posts, preview }) => {
     console.log(document, posts, preview)
+    console.log(posts)
     return (
         <div>
-            {posts.results.map((post) => {
-                return (
-                    <div key={post.id}>
-                        <RichText content={post.data.title} asText />
-                    </div>
-                )
-            })}
+            <PostList posts={posts.results} />
         </div>
     )
 }

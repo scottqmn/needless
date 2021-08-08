@@ -16,8 +16,7 @@
         "subtitle": {
             "type": "StructuredText",
             "config": {
-                "multi": "paragraph, strong, em, hyperlink",
-                "allowTargetBlank": true,
+                "multi": "strong, em",
                 "label": "Subtitle"
             }
         },

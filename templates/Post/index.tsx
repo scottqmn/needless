@@ -1,15 +1,15 @@
-// import PageSlices from '../../components/PageSlices'
+import PostSlices from '../../components/PostSlices'
 import { Document } from '../../interfaces/prismic'
 
 type Props = {
-    post: Document
+    document: Document
     preview: boolean
 }
 
-const Page: React.FC<Props> = ({ post, preview }) => {
-    console.log(post, preview)
+const Post: React.FC<Props> = ({ document, preview }) => {
+    console.log(document, preview)
 
-    return <div>post</div>
+    return <PostSlices body={document.data.body} />
 }
 
-export default Page
+export default Post
