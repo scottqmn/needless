@@ -1,0 +1,48 @@
+{
+    "Main": {
+        "uid": {
+            "type": "UID",
+            "config": {
+                "label": "UID"
+            }
+        },
+        "featured_posts": {
+            "type": "Group",
+            "config": {
+                "fields": {
+                    "featured_post": {
+                        "type": "Link",
+                        "config": {
+                            "select": "document",
+                            "customtypes": ["post"],
+                            "label": "Featured Post"
+                        }
+                    }
+                },
+                "label": "Featured Posts"
+            }
+        }
+    },
+    "Metadata": {
+        "meta_title": {
+            "type": "Text",
+            "config": {
+                "label": "Title"
+            }
+        },
+        "meta_description": {
+            "type": "Text",
+            "config": {
+                "label": "Description"
+            }
+        },
+        "meta_image": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Image"
+            }
+        }
+    }
+}

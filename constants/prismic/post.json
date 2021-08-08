@@ -21,6 +21,14 @@
                 "label": "Subtitle"
             }
         },
+        "image": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Image"
+            }
+        },
         "related": {
             "type": "Group",
             "config": {
