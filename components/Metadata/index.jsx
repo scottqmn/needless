@@ -26,7 +26,6 @@ const Metadata = ({ meta_title, meta_description, meta_image }) => {
                 sizes='180x180'
                 href='/metadata/apple-touch-icon.png'
             />
-            <link rel='icon' href='/metadata/favicon.ico' />
             <link
                 rel='icon'
                 type='image/png'
@@ -43,9 +42,14 @@ const Metadata = ({ meta_title, meta_description, meta_image }) => {
             <link
                 rel='mask-icon'
                 href='/metadata/safari-pinned-tab.svg'
-                color='#075b97'
+                color='#fd8d0d'
             />
-            <meta name='msapplication-TileColor' content='#075b97' />
+            <link rel='shortcut icon' href='/metadata/favicon.ico' />
+            <meta name='msapplication-TileColor' content='#fd8d0d' />
+            <meta
+                name='msapplication-config'
+                content='/metadata/browserconfig.xml'
+            />
             <meta name='theme-color' content='#ffffff' />
             {/* Open Graph/Facebook */}
             <meta property='og:title' content={title} />
