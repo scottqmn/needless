@@ -6,14 +6,16 @@ import styles from './styles.module.scss'
 
 type Props = {
     children: React.ReactNode
+    navigation: any[]
+    social: any[]
 }
 
-const Layout = ({ children }) => {
+const Layout = ({ children, navigation, social }) => {
     return (
         <div className={styles.outer}>
-            <Header />
+            <Header navigation={navigation} />
             <main>{children}</main>
-            <Footer />
+            <Footer social={social} />
         </div>
     )
 }
