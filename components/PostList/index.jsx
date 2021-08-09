@@ -4,9 +4,9 @@ import styles from './styles.module.scss'
 
 const PostList = ({ posts }) => {
     return (
-        <ul classList>
+        <ul>
             {posts.map((post) => (
-                <li key={post.uid}>
+                <li key={post.uid} className='t-logo'>
                     <Link document={post}>
                         <RichText content={post.data.title} asText />
                     </Link>

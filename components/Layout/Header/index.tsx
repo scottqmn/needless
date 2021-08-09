@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import clsx from 'clsx'
 import React from 'react'
 import Link from 'next/link'
@@ -17,7 +18,11 @@ const Header: React.FC<Props> = () => {
     return (
         <header className={styles.outer}>
             <div className={clsx(styles.inner, 'container')}>
-                <Logo />
+                <Link href='/'>
+                    <a>
+                        <Logo />
+                    </a>
+                </Link>
                 <div className={clsx(styles.links, 't-logo')}>
                     {links.map(({ text, href }) => (
                         <div key={href}>

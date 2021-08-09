@@ -9,14 +9,15 @@ type Props = {
     preview: boolean
 }
 
-const Page: React.FC<Props> = ({ document, posts, preview }) => {
+const Homepage: React.FC<Props> = ({ document, posts, preview }) => {
     console.log(document, posts, preview)
-    console.log(posts)
     return (
         <div>
-            <PostList posts={posts.results} />
+            <div className='container'>
+                <PostList posts={posts.results} />
+            </div>
         </div>
     )
 }
 
-export default Page
+export default Homepage

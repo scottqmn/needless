@@ -16,6 +16,14 @@ export const Client = (req = null) => {
 
 export const fetchLinks = { post: [] }
 
+export const getAppProps = async (context) => {
+    const { req } = context
+
+    const global = await Client(req).getSingle('global')
+
+    return { appProps: { global } }
+}
+
 export const getHomepageProps = async (context) => {
     const { req, preview = null, previewData = {} } = context
 

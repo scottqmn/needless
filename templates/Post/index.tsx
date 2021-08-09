@@ -15,9 +15,13 @@ const Post: React.FC<Props> = ({ document, preview }) => {
 
     return (
         <div>
-            <div className={clsx(styles.intro, 'container', 'rte')}>
-                <RichText content={title} />
-                <RichText content={subtitle} />
+            <div className={clsx(styles.intro, 'container')}>
+                <div className='t-rte'>
+                    <RichText content={title} />
+                </div>
+                <div className='t-subtitle'>
+                    <RichText content={subtitle} />
+                </div>
                 <Image image={image} />
             </div>
             <PostSlices body={body} />

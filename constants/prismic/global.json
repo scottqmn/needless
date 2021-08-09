@@ -1,0 +1,62 @@
+{
+    "Main": {
+        "navigation": {
+            "type": "Group",
+            "config": {
+                "fields": {
+                    "link": {
+                        "type": "Link",
+                        "config": {
+                            "allowTargetBlank": true,
+                            "label": "Link"
+                        }
+                    }
+                },
+                "label": "Navigation"
+            }
+        },
+        "social": {
+            "type": "Group",
+            "config": {
+                "fields": {
+                    "type": {
+                        "type": "Text",
+                        "config": {
+                            "label": "Type"
+                        }
+                    },
+                    "link": {
+                        "type": "Link",
+                        "config": {
+                            "allowTargetBlank": true,
+                            "label": "Link"
+                        }
+                    }
+                },
+                "label": "Social"
+            }
+        }
+    },
+    "Metadata": {
+        "meta_title": {
+            "type": "Text",
+            "config": {
+                "label": "Title"
+            }
+        },
+        "meta_description": {
+            "type": "Text",
+            "config": {
+                "label": "Description"
+            }
+        },
+        "meta_image": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Image"
+            }
+        }
+    }
+}
