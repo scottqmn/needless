@@ -6,6 +6,14 @@
                 "label": "UID"
             }
         },
+        "category": {
+            "type": "Link",
+            "config": {
+                "select": "document",
+                "customtypes": ["category"],
+                "label": "Category"
+            }
+        },
         "title": {
             "type": "StructuredText",
             "config": {
