@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getDocumentProps, getDocumentPaths } from '../utils/prismic'
-import Page from '../templates/Page'
+import Post from '../templates/Post'
 
-export const getStaticProps: GetStaticProps = getDocumentProps('page')
+export const getStaticProps: GetStaticProps = getDocumentProps('post')
 
-export const getStaticPaths: GetStaticPaths = getDocumentPaths('page')
+export const getStaticPaths: GetStaticPaths = getDocumentPaths('post')
 
-export default Page
+export default Post

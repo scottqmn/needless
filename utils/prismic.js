@@ -69,17 +69,45 @@ export const getDocumentProps = (docType) => async (context) => {
     }
 }
 
-export const getDocumentPaths = (docType) => async () => {
+export const getDocumentPaths = (docType, param = 'uid') => async () => {
     const documents = await Client().query([
         Prismic.Predicates.at('document.type', docType),
     ])
 
     const paths =
-        documents.results.map(({ uid }) => ({ params: { uid } })) || []
+        documents.results.map(({ uid }) => ({ params: { [param]: uid } })) || []
 
     return {
         paths,
         fallback: false,
+    }
+}
+
+export const getCategoryProps = async (context) => {
+    const { req, params = {}, preview = null, previewData = {} } = context
+    const { uid } = params
+
+    const queryOptions = {
+        fetchLinks: [...fetchLinks.post],
+    }
+
+    if (previewData.ref) {
+        queryOptions.ref = previewData.ref
+    }
+
+    const document = await Client(req).getByUID('category', uid, queryOptions)
+
+    const { id: categoryId } = document
+
+    const posts = categoryId
+        ? await Client().query([
+              Prismic.Predicates.at('document.type', 'post'),
+              Prismic.Predicates.at('my.post.category', categoryId),
+          ])
+        : []
+
+    return {
+        props: { document, posts, preview },
     }
 }
 
@@ -102,10 +130,12 @@ export const linkResolver = (doc) => {
     switch (doc.type) {
         case 'homepage':
             return '/'
+        case 'category':
+            return `/c/${doc.uid}`
         case 'page':
-            return `/${doc.uid}`
-        case 'post':
             return `/p/${doc.uid}`
+        case 'post':
+            return `/${doc.uid}`
         default:
             // eslint-disable-next-line no-console
             console.warn('No linkResolver case:', doc)
