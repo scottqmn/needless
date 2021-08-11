@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types'
 import NextLink from 'next/link'
 import { linkResolver } from '../../../utils/prismic'
-import { LinkPropType } from '../../../prop-types/prismic'
+import { prismicLinkPropType } from '../../../prop-types/prismic'
 
 const Link = ({ children, document, link, ...props }) => {
     if (document) {
@@ -46,7 +46,7 @@ const Link = ({ children, document, link, ...props }) => {
 
 Link.propTypes = {
     children: PropTypes.node,
-    link: LinkPropType,
+    link: prismicLinkPropType,
     document: PropTypes.object, // TODO: refine
 }
 

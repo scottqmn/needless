@@ -1,14 +1,10 @@
 /* eslint-disable */
 import React from 'react'
+import PropTypes from 'prop-types'
 import Header from './Header'
 import Footer from './Footer'
 import styles from './styles.module.scss'
-
-type Props = {
-    children: React.ReactNode
-    navigation: any[]
-    social: any[]
-}
+import { prismicLinkPropType } from '../../prop-types/prismic'
 
 const Layout = ({ children, navigation, social }) => {
     return (
@@ -20,6 +16,14 @@ const Layout = ({ children, navigation, social }) => {
     )
 }
 
-Layout.propTypes = {}
+Layout.propTypes = {
+    children: PropTypes.node,
+    navigation: PropTypes.arrayOf(
+        PropTypes.shape({ text: PropTypes.string, link: prismicLinkPropType })
+    ),
+    social: PropTypes.arrayOf(
+        PropTypes.shape({ type: PropTypes.string, link: prismicLinkPropType })
+    ),
+}
 
 export default Layout

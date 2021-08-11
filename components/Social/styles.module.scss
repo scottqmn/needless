@@ -1,0 +1,14 @@
+@use 'breakpoints' as bp;
+
+.container {
+    display: flex;
+    gap: 20px;
+
+    svg {
+        width: 24px;
+
+        @media (min-width: bp.$md) {
+            width: 48px;
+        }
+    }
+}
