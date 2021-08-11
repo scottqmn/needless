@@ -1,11 +1,7 @@
 import RichText from './RichText'
 import Images from './Images'
 
-type Props = {
-    body: { slice_type: string }[]
-}
-
-const PageSlices: React.FC<Props> = ({ body }) => {
+const PageSlices = ({ body }) => {
     const renderSlice = (slice) => {
         const { slice_type } = slice
         let Component

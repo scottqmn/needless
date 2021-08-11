@@ -21,7 +21,10 @@
         "**/*.js",
         "custom.d.ts",
         "pages/_document.jsx",
-        "pages/_app.jsx"
+        "pages/_app.jsx",
+        "components/PostSlices/index.jsx",
+        "components/PostSlices/Images/index.jsx",
+        "components/PostSlices/RichText/index.jsx"
     ],
     "exclude": ["node_modules"]
 }

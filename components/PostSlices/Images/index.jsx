@@ -1,4 +1,4 @@
-const Images: React.FC = () => {
+const Images = () => {
     return <div>Images</div>
 }
 
