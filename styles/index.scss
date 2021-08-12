@@ -8,13 +8,15 @@
 :root {
     --text: #000;
     --background: #fff;
-    --primary: #fd8d0d;
+    --primary: #a25a08;
     --secondary: #eaf4d3;
+    --accent: #287494;
     --monospace: 'Major Mono Display', monospace;
     --sans-serif: 'Work Sans', sans-serif;
     --heading: 'Major Mono Display', monospace;
     --body: 'Work Sans', sans-serif;
-    --gap: 20px;
+    --gap2: 20px;
+    --gap4: 40px;
 }
 
 html {

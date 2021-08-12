@@ -1,9 +1,9 @@
 @use 'breakpoints' as bp;
 
 .container {
-    max-width: calc(900px + 2 * var(--gap));
+    max-width: calc(900px + 2 * var(--gap2));
     margin: 0 auto;
-    padding: 0 var(--gap);
+    padding: 0 var(--gap2);
     width: 100%;
 }
 
@@ -17,8 +17,8 @@
 }
 
 .section {
-    padding-top: var(--gap);
-    padding-bottom: var(--gap);
+    padding-top: var(--gap2);
+    padding-bottom: var(--gap2);
 
     @media (min-width: bp.$md) {
         padding-top: 40px;
@@ -28,7 +28,7 @@
 
 .grid {
     display: grid;
-    grid-gap: var(--gap);
+    grid-gap: var(--gap2);
     grid-template-columns: repeat(4, 1fr);
 
     @media (min-width: bp.$md) {

@@ -2,13 +2,13 @@
 
 .outer {
     background-color: var(--secondary);
-    padding: var(--gap) 0;
+    padding: var(--gap2) 0;
 }
 
 .inner {
     display: flex;
     flex-direction: column;
-    gap: var(--gap);
+    gap: var(--gap2);
 
     @media (min-width: bp.$md) {
         align-items: center;

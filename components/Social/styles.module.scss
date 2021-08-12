@@ -4,7 +4,12 @@
     display: flex;
     gap: 20px;
 
+    a:hover {
+        color: var(--primary);
+    }
+
     svg {
+        color: inherit;
         width: 24px;
 
         @media (min-width: bp.$md) {
