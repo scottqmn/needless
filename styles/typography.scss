@@ -11,13 +11,13 @@
 }
 
 %h1 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-family: var(--heading);
     letter-spacing: 0.05em;
     line-height: 1.35em;
 
     @media (min-width: bp.$md) {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 }
 
@@ -211,10 +211,12 @@
         padding: var(--gap);
         white-space: normal;
     }
-    i {
+    em {
         font-style: italic;
+        font-weight: inherit;
     }
     strong {
+        font-style: inherit;
         font-weight: 700;
     }
 
