@@ -1,3 +1,11 @@
+.empty {
+    a {
+        color: var(--accent);
+        display: block;
+        margin-top: 1em;
+    }
+}
+
 .list {
     display: flex;
     flex-direction: column;
