@@ -10,7 +10,6 @@ type Props = {
 }
 
 const Homepage: React.FC<Props> = ({ document, posts, preview }) => {
-    console.log(document, posts, preview)
     return (
         <div>
             <div className='container'>

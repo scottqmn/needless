@@ -10,7 +10,6 @@ type Props = {
 }
 
 const Post: React.FC<Props> = ({ document, preview }) => {
-    console.log(document, preview)
     const { body, image, related, subtitle, title } = document.data
 
     return (

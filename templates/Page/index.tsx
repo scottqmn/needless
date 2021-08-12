@@ -7,8 +7,6 @@ type Props = {
 }
 
 const Page: React.FC<Props> = ({ document, preview }) => {
-    console.log(document, preview)
-
     return <PageSlices body={document.data.body} />
 }
 
