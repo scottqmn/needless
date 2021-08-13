@@ -1,8 +1,24 @@
-.intro {
+.header {
     background-color: var(--secondary);
-    padding: var(--gap2);
+    padding: var(--gap2) 0;
 }
 
-.posts {
-    margin-top: var(--gap4);
+.category {
+    margin-top: var(--gap2);
+
+    h2 {
+        border-bottom: 1px solid currentColor;
+        margin-bottom: var(--gap2);
+        padding-bottom: var(--gap2);
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    a:hover {
+        color: var(--primary);
+    }
 }

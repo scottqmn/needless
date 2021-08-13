@@ -129,7 +129,7 @@ export const getPosts = async (context) => {
 export const getSearchProps = async (context) => {
     const { params = {}, req } = context
 
-    const { search } = params
+    const { query } = params
 
     const options = {
         fetchLinks: [...fetchLinks.post],
@@ -143,12 +143,12 @@ export const getSearchProps = async (context) => {
                     'category',
                     'page',
                 ]),
-                Prismic.Predicates.fulltext('document', search),
+                Prismic.Predicates.fulltext('document', query),
             ],
             options
         )) || []
 
-    return { props: { search: response } }
+    return { props: { query, search: response } }
 }
 
 export const linkResolver = (doc) => {
