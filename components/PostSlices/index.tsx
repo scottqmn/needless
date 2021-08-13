@@ -1,7 +1,13 @@
+import React from 'react'
 import RichText from './RichText'
 import Images from './Images'
+import { Slice } from '../../interfaces/prismic'
 
-const PageSlices = ({ body }) => {
+type Props = {
+    body: Slice[]
+}
+
+const PageSlices: React.FC<Props> = ({ body }) => {
     const renderSlice = (slice) => {
         const { slice_type } = slice
         let Component

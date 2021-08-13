@@ -19,3 +19,16 @@ export interface Document {
     last_publication_date: string | null
     data: any
 }
+
+export interface RichTextContent {
+    spans: any[]
+    text: string
+    type: string
+}
+
+export interface Slice {
+    items: Record<string, unknown>[]
+    primary: Record<string, unknown>
+    slice_label?: string
+    slice_type: string
+}

@@ -1,9 +1,11 @@
 import clsx from 'clsx'
 import { RichText } from '../../Prismic'
+import { RichTextContent } from '../../../interfaces/prismic'
 
-// TODO: refine
 type Props = {
-    primary: any
+    primary: {
+        content: RichTextContent[]
+    }
 }
 
 const RichTextSlice: React.FC<Props> = ({ primary }) => {

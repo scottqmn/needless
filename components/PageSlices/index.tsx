@@ -1,8 +1,9 @@
 import Heading from './Heading'
 import Hero from './Hero'
+import { Slice } from '../../interfaces/prismic'
 
 type Props = {
-    body: { slice_type: string }[]
+    body: Slice[]
 }
 
 const PageSlices: React.FC<Props> = ({ body }) => {
