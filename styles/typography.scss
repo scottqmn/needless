@@ -11,13 +11,13 @@
 }
 
 %h1 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-family: var(--heading);
     letter-spacing: 0.05em;
     line-height: 1.35em;
 
     @media (min-width: bp.$md) {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 }
 
@@ -201,20 +201,22 @@
         margin-top: 0;
     }
     a {
-        color: var(--primary);
+        color: var(--accent);
         text-decoration: underline;
     }
     pre {
         background-color: var(--secondary);
         border-radius: 10px;
         margin-block: 2em;
-        padding: var(--gap);
+        padding: var(--gap2);
         white-space: normal;
     }
-    i {
+    em {
         font-style: italic;
+        font-weight: inherit;
     }
     strong {
+        font-style: inherit;
         font-weight: 700;
     }
 
@@ -265,4 +267,14 @@ textarea {
 
 button {
     @extend %label;
+}
+
+*::-moz-selection {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+*::selection {
+    background-color: var(--primary);
+    color: var(--white);
 }

@@ -6,6 +6,13 @@
                 "label": "UID"
             }
         },
+        "title": {
+            "type": "StructuredText",
+            "config": {
+                "single": "heading1",
+                "label": "Title"
+            }
+        },
         "body": {
             "type": "Slices",
             "fieldset": "Slice zone",

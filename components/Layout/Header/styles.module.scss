@@ -1,6 +1,6 @@
 .outer {
     background-color: var(--background);
-    padding: var(--gap) 0;
+    padding: var(--gap2) 0;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -8,11 +8,15 @@
 
 .inner {
     display: flex;
-    gap: var(--gap);
+    gap: var(--gap2);
     justify-content: space-between;
     width: 100%;
 }
 
 .links {
     text-align: right;
+
+    a:hover {
+        color: var(--primary);
+    }
 }

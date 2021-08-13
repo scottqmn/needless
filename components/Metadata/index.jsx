@@ -42,10 +42,10 @@ const Metadata = ({ meta_title, meta_description, meta_image }) => {
             <link
                 rel='mask-icon'
                 href='/metadata/safari-pinned-tab.svg'
-                color='#fd8d0d'
+                color='#a25a08'
             />
             <link rel='shortcut icon' href='/metadata/favicon.ico' />
-            <meta name='msapplication-TileColor' content='#fd8d0d' />
+            <meta name='msapplication-TileColor' content='#a25a08' />
             <meta
                 name='msapplication-config'
                 content='/metadata/browserconfig.xml'

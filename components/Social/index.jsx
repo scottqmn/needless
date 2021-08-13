@@ -11,7 +11,6 @@ import TwitterIcon from '../../public/social/twitter.svg'
 import YouTubeIcon from '../../public/social/youtube.svg'
 
 const Social = ({ items }) => {
-    console.log(items)
     const renderIcon = (type) => {
         const formattedType = type.toLowerCase()
         switch (formattedType) {

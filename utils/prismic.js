@@ -126,6 +126,31 @@ export const getPosts = async (context) => {
     return { props: { posts } }
 }
 
+export const getSearchProps = async (context) => {
+    const { params = {}, req } = context
+
+    const { query } = params
+
+    const options = {
+        fetchLinks: [...fetchLinks.post],
+    }
+
+    const response =
+        (await Client(req).query(
+            [
+                Prismic.Predicates.any('document.type', [
+                    'post',
+                    'category',
+                    'page',
+                ]),
+                Prismic.Predicates.fulltext('document', query),
+            ],
+            options
+        )) || []
+
+    return { props: { query, search: response } }
+}
+
 export const linkResolver = (doc) => {
     switch (doc.type) {
         case 'homepage':
