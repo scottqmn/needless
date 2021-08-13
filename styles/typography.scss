@@ -268,3 +268,13 @@ textarea {
 button {
     @extend %label;
 }
+
+*::-moz-selection {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+*::selection {
+    background-color: var(--primary);
+    color: var(--white);
+}

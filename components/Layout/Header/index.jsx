@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import NextLink from 'next/link'
 import clsx from 'clsx'
 import Logo from '../../Logo'
+import Search from '../../Search'
 import { Link } from '../../Prismic'
 import { prismicLinkPropType } from '../../../prop-types/prismic'
 import styles from './styles.module.scss'
@@ -22,6 +23,7 @@ const Header = ({ navigation }) => {
                             <Link link={link}>{text}</Link>
                         </div>
                     ))}
+                    <Search />
                 </nav>
             </div>
         </header>
