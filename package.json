@@ -15,6 +15,7 @@
     "@types/prismic-dom": "^2.1.1",
     "clsx": "^1.1.1",
     "dotenv": "^8.2.0",
+    "embla-carousel": "^4.5.3",
     "focus-trap-react": "^8.4.2",
     "i18next": "^19.8.7",
     "next": "^10.0.3",

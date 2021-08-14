@@ -1,0 +1,38 @@
+.outer {
+    overflow: hidden;
+}
+.inner {
+    display: flex;
+}
+.slide {
+    position: relative;
+    flex: 0 0 100%;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--gap2);
+
+    padding: var(--gap1) var(--gap2);
+    width: min-content;
+
+    > *:not(:first-child) {
+        margin-left: var(--gap1);
+    }
+}
+
+.dot {
+    border-radius: 10px;
+    background-color: var(--text);
+    height: 10px;
+    transition: width 0.2s ease-out;
+    width: 10px;
+
+    &.isActive {
+        background-color: var(--primary);
+        width: 30px;
+    }
+}
