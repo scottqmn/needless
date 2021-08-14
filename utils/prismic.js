@@ -1,8 +1,9 @@
 import Prismic from '@prismicio/client'
+import pageType from '../constants/prismic/page.json'
+import postType from '../constants/prismic/post.json'
 
 export const apiEndpoint = process.env.PRISMIC_API_ENDPOINT
 export const accessToken = process.env.PRISMIC_ACCESS_TOKEN
-export const indexUID = process.env.PRISMIC_INDEX_UID
 
 // Client method to query documents from the Prismic repo
 export const Client = (req = null) => {
@@ -14,7 +15,17 @@ export const Client = (req = null) => {
     })
 }
 
-export const fetchLinks = { post: [] }
+const IGNORE_FIELDS = ['uid', 'body']
+
+const createFetchLinks = (name, type) =>
+    Object.keys(type.Main)
+        .filter((field) => !IGNORE_FIELDS.includes(field))
+        .map((field) => `${name}.${field}`)
+
+export const fetchLinks = {
+    page: createFetchLinks('page', pageType),
+    post: createFetchLinks('post', postType),
+}
 
 export const getAppProps = async (context) => {
     const { req } = context
@@ -58,11 +69,7 @@ export const getDocumentProps = (docType) => async (context) => {
         queryOptions.ref = previewData.ref
     }
 
-    const document = await Client(req).getByUID(
-        docType,
-        uid || indexUID,
-        queryOptions
-    )
+    const document = await Client(req).getByUID(docType, uid, queryOptions)
 
     return {
         props: { document, preview },

@@ -6,6 +6,13 @@
                 "label": "UID"
             }
         },
+        "featured": {
+            "type": "Boolean",
+            "config": {
+                "default_value": false,
+                "label": "Featured"
+            }
+        },
         "category": {
             "type": "Link",
             "config": {
