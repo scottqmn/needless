@@ -35,5 +35,16 @@
                 opacity: 1;
             }
         }
+
+        // Reverse for S, N
+        &[data-letter='s'],
+        &[data-letter='n'] {
+            &::before {
+                text-transform: uppercase;
+            }
+            &::after {
+                text-transform: lowercase;
+            }
+        }
     }
 }
