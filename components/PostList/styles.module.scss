@@ -1,3 +1,5 @@
+@use 'breakpoints' as bp;
+
 .empty {
     a {
         color: var(--accent);
@@ -9,9 +11,21 @@
 .list {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 2em;
 }
 
-.item a:hover {
-    color: var(--primary);
+.item {
+    position: relative;
+
+    &.isFeatured {
+        a::after {
+            margin-inline-start: 0.25em;
+            content: '♥';
+            color: #f00;
+        }
+    }
+
+    a:hover {
+        color: var(--primary);
+    }
 }

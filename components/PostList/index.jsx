@@ -20,13 +20,23 @@ const PostList = ({ posts = [] }) => {
 
     return (
         <ul className={styles.list}>
-            {posts.map((post) => (
-                <li key={post.uid} className={clsx(styles.item, 't-logo')}>
-                    <Link document={post}>
-                        <RichText content={post.data.title} asText />
-                    </Link>
-                </li>
-            ))}
+            {posts.map((post) => {
+                const { featured, title } = post.data
+                return (
+                    <li
+                        key={post.uid}
+                        className={clsx(
+                            styles.item,
+                            featured && styles.isFeatured,
+                            't-logo'
+                        )}
+                    >
+                        <Link document={post}>
+                            <RichText content={title} asText />
+                        </Link>
+                    </li>
+                )
+            })}
         </ul>
     )
 }

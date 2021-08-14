@@ -27,6 +27,22 @@ export const fetchLinks = {
     post: createFetchLinks('post', postType),
 }
 
+export const getPosts = async (context) => {
+    const { req } = context
+
+    const options = {
+        fetchLinks: [...fetchLinks.post],
+        orderings: '[document.first_publication_date desc]',
+    }
+
+    const posts = await Client(req).query(
+        [Prismic.Predicates.at('document.type', 'post')],
+        options
+    )
+
+    return posts
+}
+
 export const getAppProps = async (context) => {
     const { req } = context
 
@@ -48,9 +64,7 @@ export const getHomepageProps = async (context) => {
 
     const document = await Client(req).getSingle('homepage', queryOptions)
 
-    const posts = await Client().query([
-        Prismic.Predicates.at('document.type', 'post'),
-    ])
+    const posts = await getPosts(context)
 
     return {
         props: { document, posts, preview },
@@ -116,21 +130,6 @@ export const getCategoryProps = async (context) => {
     return {
         props: { document, posts, preview },
     }
-}
-
-export const getPosts = async (context) => {
-    const { req } = context
-
-    const options = {
-        fetchLinks: [...fetchLinks.post],
-    }
-
-    const posts = await Client(req).query(
-        [Prismic.Predicates.at('document.type', 'post')],
-        options
-    )
-
-    return { props: { posts } }
 }
 
 export const getSearchProps = async (context) => {
