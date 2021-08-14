@@ -12,6 +12,7 @@
   "dependencies": {
     "@prismicio/client": "^5.1.0",
     "@svgr/webpack": "^5.5.0",
+    "@types/prismic-dom": "^2.1.1",
     "clsx": "^1.1.1",
     "dotenv": "^8.2.0",
     "focus-trap-react": "^8.4.2",

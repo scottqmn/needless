@@ -15,16 +15,12 @@
         "jsx": "preserve"
     },
     "include": [
+        "custom.d.ts",
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
         "**/*.js",
-        "custom.d.ts",
-        "pages/_document.jsx",
-        "pages/_app.jsx",
-        "components/PostSlices/index.jsx",
-        "components/PostSlices/Images/index.jsx",
-        "components/PostSlices/RichText/index.jsx"
+        "**/*.jsx"
     ],
     "exclude": ["node_modules"]
 }
