@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { RichText, Elements } from 'prismic-reactjs'
 import Image from '../Image'
 import { linkResolver } from '../../../utils/prismic'
-import { prismicRichTextPropType } from '../../../prop-types/prismic'
+// import { prismicRichTextPropType } from '../../../prop-types/prismic'
 
 const propsWithUniqueKey = (props, key) => {
     return Object.assign(props || {}, { key })
@@ -83,7 +83,7 @@ const PrismicRichText = ({ content, asText }) => {
 }
 
 PrismicRichText.propTypes = {
-    content: prismicRichTextPropType,
+    content: PropTypes.any,
     asText: PropTypes.bool,
 }
 

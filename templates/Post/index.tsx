@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import PostSlices from '../../components/PostSlices'
+import Slices from '../../components/Slices'
 import { Image, RichText } from '../../components/Prismic'
 import { Document } from '../../interfaces/prismic'
 import styles from './styles.module.scss'
@@ -23,7 +23,7 @@ const Post: React.FC<Props> = ({ document, preview }) => {
                 </div>
                 <Image image={image} />
             </div>
-            <PostSlices body={body} />
+            <Slices body={body} />
         </div>
     )
 }

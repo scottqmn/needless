@@ -3,15 +3,13 @@ import { RichText } from '../../Prismic'
 import { RichTextContent } from '../../../interfaces/prismic'
 
 type Props = {
-    primary: {
-        content: RichTextContent[]
-    }
+    content: RichTextContent[]
 }
 
-const RichTextSlice: React.FC<Props> = ({ primary }) => {
+const RichTextSlice: React.FC<Props> = ({ content }) => {
     return (
         <div className={clsx('container', 't-rte')}>
-            <RichText content={primary.content} />
+            <RichText content={content} />
         </div>
     )
 }

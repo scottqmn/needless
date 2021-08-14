@@ -1,12 +1,15 @@
+import React from 'react'
 import Heading from './Heading'
 import Hero from './Hero'
+import Images from './Images'
+import RichText from './RichText'
 import { Slice } from '../../interfaces/prismic'
 
 type Props = {
     body: Slice[]
 }
 
-const PageSlices: React.FC<Props> = ({ body }) => {
+const Slices: React.FC<Props> = ({ body }) => {
     const renderSlice = (slice) => {
         const { slice_type } = slice
         let Component
@@ -20,13 +23,21 @@ const PageSlices: React.FC<Props> = ({ body }) => {
                 Component = Hero
                 break
             }
+            case 'images': {
+                Component = Images
+                break
+            }
+            case 'rich_text': {
+                Component = RichText
+                break
+            }
             default:
                 return (
                     <div>TODO: handle slice_type &apos;{slice_type}&apos;</div>
                 )
         }
         // eslint-disable-next-line react/jsx-props-no-spreading
-        return <Component {...slice} />
+        return <Component {...slice.primary} items={slice.items} />
     }
     return (
         <div>
@@ -40,4 +51,4 @@ const PageSlices: React.FC<Props> = ({ body }) => {
     )
 }
 
-export default PageSlices
+export default Slices

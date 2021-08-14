@@ -4,15 +4,11 @@ import { RichTextContent } from '../../../interfaces/prismic'
 import styles from './styles.module.scss'
 
 type Props = {
-    primary: {
-        heading: RichTextContent[]
-        label?: string
-    }
+    heading: RichTextContent[]
+    label?: string
 }
 
-const Heading: React.FC<Props> = ({ primary }) => {
-    const { heading, label } = primary
-
+const Heading: React.FC<Props> = ({ heading, label }) => {
     return (
         <div className={clsx(styles.outer, 'section')}>
             <div className='container'>
