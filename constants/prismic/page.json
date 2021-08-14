@@ -19,7 +19,8 @@
             "config": {
                 "labels": {
                     "hero": [],
-                    "headings": []
+                    "headings": [],
+                    "rich_text": []
                 },
                 "choices": {
                     "hero": {
@@ -79,6 +80,24 @@
                         },
                         "repeat": {},
                         "display": "list"
+                    },
+                    "rich_text": {
+                        "type": "Slice",
+                        "fieldset": "Rich Text",
+                        "description": "Text editor",
+                        "icon": "text_fields",
+                        "display": "list",
+                        "non-repeat": {
+                            "content": {
+                                "type": "StructuredText",
+                                "config": {
+                                    "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item",
+                                    "allowTargetBlank": true,
+                                    "label": "Content"
+                                }
+                            }
+                        },
+                        "repeat": {}
                     }
                 }
             }
