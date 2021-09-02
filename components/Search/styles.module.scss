@@ -7,6 +7,7 @@
     &:focus,
     &:focus-within {
         color: var(--primary);
+
         input {
             text-decoration: underline;
         }
@@ -16,7 +17,7 @@
         background-image: linear-gradient(
             90deg,
             var(--background),
-            transparent
+            rgba(255, 255, 255, 0)
         );
         content: '';
         height: 100%;
