@@ -156,30 +156,37 @@
 .t-rte {
     h1 {
         @extend %h1;
+
         margin: 0.67em 0;
     }
     h2 {
         @extend %h2;
+
         margin: 0.83em 0;
     }
     h3 {
         @extend %h3;
+
         margin: 1em 0;
     }
     h4 {
         @extend %h4;
+
         margin: 1em 0;
     }
     h5 {
         @extend %h5;
+
         margin: 1em 0;
     }
     h6 {
         @extend %h6;
+
         margin: 1em 0;
     }
     p {
         @extend %body;
+
         margin: 1em 0;
     }
     ul,
