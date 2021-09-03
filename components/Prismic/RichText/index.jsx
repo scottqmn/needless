@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { RichText, Elements } from 'prismic-reactjs'
 import Image from '../Image'
 import { linkResolver } from '../../../utils/prismic'
+import highlight from '../../../utils/highlight'
 // import { prismicRichTextPropType } from '../../../prop-types/prismic'
 
 const propsWithUniqueKey = (props, key) => {
@@ -58,6 +59,13 @@ const htmlSerializer = (type, element, content, children, key) => {
                 />
             )
 
+        // preformatted uses code highlighting
+        case Elements.preformatted:
+            return (
+                <pre key={key}>
+                    <code>{element.text}</code>
+                </pre>
+            )
         // Return null to stick with the default behavior
         default:
             return null
@@ -65,6 +73,10 @@ const htmlSerializer = (type, element, content, children, key) => {
 }
 
 const PrismicRichText = ({ content, asText }) => {
+    useEffect(() => {
+        highlight.initHighlighting()
+    }, [])
+
     if (!content) {
         return null
     }

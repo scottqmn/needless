@@ -10,6 +10,7 @@ const Carousel = ({ slides, hideDots }) => {
         align: 'center',
         loop: true,
     })
+
     const [activeSlide, setActiveSlide] = useState(0)
 
     useEffect(() => {
