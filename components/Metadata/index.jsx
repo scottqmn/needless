@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import Head from 'next/head'
-import DEFAULT from '../../constants/metadata'
+import DEFAULT from '../../constants/metadata.json'
 import { prismicImagePropType } from '../../prop-types/prismic'
 
 const Metadata = ({ meta_title, meta_description, meta_image }) => {
