@@ -1,40 +1,14 @@
 {
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "sourceType": "module",
-        "allowImportExportEverywhere": false,
-        "codeFrame": true
-    },
     "plugins": ["react", "react-hooks"],
     "extends": [
+        "next/core-web-vitals",
         "eslint:recommended",
-        "airbnb",
-        "airbnb/hooks",
-        "plugin:import/errors",
-        "plugin:import/warnings",
-        "plugin:jsx-a11y/recommended",
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
         "prettier",
         "prettier/react"
     ],
     "rules": {
         "strict": 0,
         "camelcase": "off",
-        "import/extensions": [
-            "error",
-            "ignorePackages",
-            {
-                "js": "never",
-                "jsx": "never",
-                "ts": "never",
-                "tsx": "never"
-            }
-        ],
-        "import/no-extraneous-dependencies": [
-            "error",
-            { "devDependencies": true }
-        ],
         "jsx-a11y/anchor-is-valid": [
             "error",
             {
@@ -42,9 +16,6 @@
                 "specialLink": ["document", "link"]
             }
         ],
-        "react/react-in-jsx-scope": "off",
-        "react/require-default-props": 0,
-        "react/forbid-prop-types": 0,
         "react/jsx-filename-extension": [
             1,
             { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
@@ -80,12 +51,5 @@
                 "react/prop-types": "off"
             }
         }
-    ],
-    "settings": {
-        "import/resolver": {
-            "node": {
-                "extensions": [".js", ".jsx", ".ts", ".tsx"]
-            }
-        }
-    }
+    ]
 }

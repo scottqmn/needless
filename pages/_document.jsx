@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
                 <link
                     rel='preconnect'
                     href='https://fonts.gstatic.com'
-                    crossOrigin
+                    crossOrigin='true'
                 />
                 <link
                     href='https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Work+Sans:ital,wght@0,300;0,600;1,300;1,600&display=swap'
