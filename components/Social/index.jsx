@@ -32,7 +32,7 @@ const Social = ({ items }) => {
         }
     }
 
-    return (
+    return items.length ? (
         <div className={styles.container}>
             {items.map(({ type, link }) => {
                 return (
@@ -44,7 +44,7 @@ const Social = ({ items }) => {
                 )
             })}
         </div>
-    )
+    ) : null
 }
 
 Social.propTypes = {

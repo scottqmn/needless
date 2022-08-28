@@ -9,8 +9,8 @@ type Props = {
 }
 
 const Logo: React.FC<Props> = ({
-    title = 'need less info',
-    alt = 'needless info',
+    title = 'this is_a blog',
+    alt = 'this is my blog',
 }) => (
     <div className={clsx(styles.logo, 't-logo')} aria-label={alt || title}>
         {title.split(' ').map((word, wordIndex) => (

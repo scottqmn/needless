@@ -36,9 +36,10 @@
             }
         }
 
-        // Reverse for S, N
+        // Reverse for some letters
         &[data-letter='s'],
-        &[data-letter='n'] {
+        &[data-letter='t'],
+        &[data-letter='b'] {
             &::before {
                 text-transform: uppercase;
             }
