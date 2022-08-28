@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
+import Link from 'next/link'
 import styles from './styles.module.scss'
 
 const PreviewAlert = ({ preview }) => {
     return preview ? (
-        <a className={clsx(styles.wrap, 't-label')} href='/api/exit-preview'>
+        <Link className={clsx(styles.wrap, 't-label')} href='/api/exit-preview'>
             Exit Preview
-        </a>
+        </Link>
     ) : null
 }
 

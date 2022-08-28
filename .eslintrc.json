@@ -9,6 +9,7 @@
     "rules": {
         "strict": 0,
         "camelcase": "off",
+        "jsx-a11y/alt-text": [0],
         "jsx-a11y/anchor-is-valid": [
             "error",
             {
